@@ -378,3 +378,5 @@ nav a.book { letter-spacing: .1em; }
   .menu { gap: 1.4rem; }
   .menu .link-row { margin-top: 0; }
 }
+/* While the drink photos drift on their own, turn off snapping so the motion is smooth */
+.swipe .gallery.drift { scroll-snap-type: none; }

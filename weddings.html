@@ -172,6 +172,27 @@ document.getElementById('inquiry').addEventListener('submit', function (e) {
     new IntersectionObserver(function (en) { formOn = en[0].isIntersecting; showFloat(); }).observe(form);
   }
   window.addEventListener('scroll', showFloat, { passive: true });
+  // Phones: the drink photos drift slowly so people see they can swipe. Touching pauses it; it resumes 4s later.
+  var gal = document.querySelector('.gallery');
+  if (swipe && gal && !still) {
+    var pos = 0, paused = false, onScreen = false, timer;
+    gal.classList.add('drift');
+    function pause() { paused = true; gal.classList.remove('drift'); clearTimeout(timer); }
+    function resume() { clearTimeout(timer); timer = setTimeout(function () { pos = gal.scrollLeft; paused = false; gal.classList.add('drift'); }, 4000); }
+    gal.addEventListener('touchstart', pause, { passive: true });
+    gal.addEventListener('touchend', resume, { passive: true });
+    gal.addEventListener('pointerdown', pause);
+    gal.addEventListener('pointerup', resume);
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { onScreen = en[0].isIntersecting; }).observe(gal);
+    (function tick() {
+      if (!paused && onScreen) {
+        var end = gal.scrollWidth - gal.clientWidth;
+        pos = pos >= end - 1 ? 0 : pos + 0.35;
+        gal.scrollLeft = pos;
+      }
+      requestAnimationFrame(tick);
+    })();
+  }
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   onScroll();
