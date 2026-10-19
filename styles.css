@@ -30,20 +30,8 @@
   --step-3: clamp(2.1rem, 4.4vw, 3.2rem);
   --step-4: clamp(2.5rem, 6.2vw, 4.6rem);
 }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #1c1618; --bg-2: #251c1f; --card: #2a2023; --fg: #f3ecee; --fg-soft: #c9b9be;
-    --band: #140e10; --on-band: #f3ecee; --on-band-soft: #c9b9be;
-    --gold: #eec3ce; --gold-on-band: #eec3ce; --btn: #eec3ce; --btn-hover: #f6dce3; --on-btn: #2b1f25;
-    --line: #3a2d31; --line-band: #3a2d31; --ph: #33262a; --ph-line: #8a6570; color-scheme: dark;
-  }
-}
-:root[data-theme="dark"] {
-  --bg: #1c1618; --bg-2: #251c1f; --card: #2a2023; --fg: #f3ecee; --fg-soft: #c9b9be;
-  --band: #140e10; --on-band: #f3ecee; --on-band-soft: #c9b9be;
-  --gold: #eec3ce; --gold-on-band: #eec3ce; --btn: #eec3ce; --btn-hover: #f6dce3; --on-btn: #2b1f25;
-  --line: #3a2d31; --line-band: #3a2d31; --ph: #33262a; --ph-line: #8a6570; color-scheme: dark;
-}
+/* Light only: the cream palette is the brand, so there is no dark version. */
+:root { color-scheme: light; }
 
 * { box-sizing: border-box; }
 body { margin: 0; background: var(--bg); color: var(--fg); font-family: var(--body); font-weight: 400; font-size: var(--step-0); line-height: 1.7; }
@@ -147,8 +135,9 @@ nav a.book:hover { background: var(--btn-hover); text-decoration: none; }
 .card .btn { justify-self: start; }
 .included { display: grid; grid-template-columns: 1fr 2fr; gap: 2rem; border-top: 1px solid var(--line); padding-top: 2rem; }
 .included h3 { font-size: var(--step-1); }
-.included ul { margin: 0; padding: 0; list-style: none; columns: 2; column-gap: 2rem; font-size: var(--step--1); color: var(--fg-soft); }
-.included li { break-inside: avoid; padding-block: .2rem; }
+.included ul { margin: 0; padding: 0; list-style: none; columns: 2; column-gap: 2rem; font-family: var(--display); font-style: italic; font-size: var(--step-0); color: var(--fg); }
+.included li { break-inside: avoid; padding-block: .25rem; }
+.included li::before { content: "\25C6"; color: var(--trim); font-size: .55em; font-style: normal; vertical-align: .3em; margin-right: .8em; }
 .fine { font-size: var(--step--1); color: var(--fg-soft); }
 @media (max-width: 760px) { .included { grid-template-columns: 1fr; } }
 @media (max-width: 480px) { .included ul { columns: 1; } }
@@ -260,11 +249,11 @@ body.over-hero::before { background: transparent; }
 
 /* Quick facts right under the hero */
 .facts { border-bottom: 1px solid var(--line); }
-.facts ul { list-style: none; margin: 0 auto; padding-block: 1.4rem; display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem 0; font-size: var(--step--1); color: var(--fg-soft); }
+.facts ul { list-style: none; margin: 0 auto; padding-block: 1.4rem; display: flex; flex-wrap: wrap; justify-content: center; gap: .6rem 0; font-family: var(--display); font-style: italic; font-size: var(--step-0); color: var(--fg); }
 .facts li { padding: 0 1.4rem; }
-.facts li + li { border-left: 1px solid var(--line); }
+.facts li::before, .facts li::after { content: "\2014"; color: var(--trim); margin: 0 .55em; font-style: normal; }
 .facts strong { color: var(--fg); font-weight: 600; }
-@media (max-width: 640px) { .facts ul { display: grid; grid-template-columns: 1fr; gap: .5rem; text-align: center; } .facts li { padding: 0; } .facts li + li { border-left: 0; } }
+@media (max-width: 640px) { .facts ul { display: grid; grid-template-columns: 1fr; gap: .5rem; text-align: center; } .facts li { padding: 0; }  }
 
 /* Photo strip that slides sideways as you scroll down */
 .gallery { overflow: hidden; padding-block: .5rem; }
@@ -326,8 +315,6 @@ body.over-hero::before { background: transparent; }
 
 /* Drink menu card: gold double trim like a printed bar menu */
 :root { --trim: #9a8455; } /* gold from Jake's logo */
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --trim: #c9a86a; } }
-:root[data-theme="dark"] { --trim: #c9a86a; }
 .menu-card { background: var(--bg-2); border: 1px solid var(--trim); outline: 1px solid var(--trim); outline-offset: -9px; padding: clamp(2.2rem, 5vw, 3.6rem) clamp(1.4rem, 6vw, 4.5rem); max-width: 920px; margin: 0 auto; display: grid; gap: 1.6rem; text-align: center; }
 .menu-title { display: flex; align-items: center; justify-content: center; gap: 1rem; font-family: var(--display); font-style: italic; font-size: var(--step-2); color: var(--gold); }
 .menu-title::before, .menu-title::after { content: ""; width: clamp(2rem, 8vw, 5rem); height: 1px; background: var(--trim); }
@@ -357,3 +344,22 @@ body.over-hero::before { background: transparent; }
 .photo-wall figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 2.4rem 1rem .9rem; background: linear-gradient(to top, rgb(20 10 14 / .55), transparent); color: #fff; font-family: var(--display); font-size: var(--step-1); }
 @media (max-width: 560px) { .photo-wall .wrap { columns: 2; column-gap: .5rem; } .photo-wall figure { margin-bottom: .5rem; } }
 .logo img, .foot-top img { border-radius: 50%; box-shadow: 0 0 0 1px rgb(154 132 85 / .45); }
+
+/* FAQ as its own section */
+.faq-sec { padding-block: clamp(2.5rem, 6vw, 4.5rem); }
+.faq-sec .faq { margin: 0 auto; }
+
+/* Floating "Reserve your date" button, bottom right, clear of the iPhone home bar */
+.float-book { position: fixed; z-index: 6; right: max(16px, calc(env(safe-area-inset-right, 0px) + 16px)); bottom: max(16px, calc(env(safe-area-inset-bottom, 0px) + 12px)); background: var(--btn); color: var(--on-btn); font: 500 var(--step--1)/1 var(--body); letter-spacing: .04em; text-decoration: none; padding: 1em 1.4em; border-radius: 3px; box-shadow: 0 6px 18px rgb(60 20 32 / .25); opacity: 0; transform: translateY(12px); pointer-events: none; transition: opacity .25s, transform .25s; }
+.float-book.show { opacity: 1; transform: none; pointer-events: auto; }
+.float-book:hover { background: var(--btn-hover); }
+.no-motion .float-book { transition: none; }
+footer { padding-bottom: calc(72px + env(safe-area-inset-bottom, 0px)); }
+/* Keep the dashes beside each fact, and keep nav labels on one line */
+.facts li { display: flex; justify-content: center; align-items: baseline; }
+nav.main a { white-space: nowrap; }
+nav a.book { letter-spacing: .1em; }
+@media (max-width: 640px) {
+  .facts ul { font-size: var(--step--1); }
+  .float-book { padding: .8em 1.1em; font-size: .85rem; }
+}
