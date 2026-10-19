@@ -150,9 +150,12 @@ document.getElementById('inquiry').addEventListener('submit', function (e) {
   var header = document.querySelector('header.top');
   var track = document.querySelector('.gallery .track');
   if (still) { document.documentElement.classList.add('no-motion'); document.documentElement.classList.remove('js'); }
+  // On phones and touch screens the drink photos are swiped with a finger instead of moving with the page.
+  var swipe = window.matchMedia('(hover: none), (max-width: 640px)').matches;
+  if (swipe) document.documentElement.classList.add('swipe');
   function onScroll() {
     header.classList.toggle('scrolled', window.scrollY > 40);
-    if (track && !still) {
+    if (track && !still && !swipe) {
       var box = track.parentElement.getBoundingClientRect();
       var vh = window.innerHeight;
       var t = Math.min(1, Math.max(0, (vh - box.top) / (vh + box.height)));
