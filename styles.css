@@ -442,3 +442,8 @@ nav a.book { letter-spacing: .1em; }
 .inc-grid li { font-size: 1.32rem; }
 /* Hero video is Jake's SLC event clip: a wide crop for computers, the full vertical clip for phones */
 @media (orientation: portrait) { .hero { background: #20190a url("images/hero-slc-poster-m.jpg") center / cover; } }
+
+/* Arched photos with a double gold trim (corporate and parties rows) */
+.pillar-img { max-width: 460px; width: 100%; justify-self: center; padding: 10px; border: 1px solid var(--trim); border-radius: 1000px 1000px 0 0; }
+.pillar-img img { border-radius: 1000px 1000px 0 0; outline: 1px solid var(--trim); outline-offset: 4px; }
+.menu { padding-top: clamp(1rem, 3vw, 2rem); }
