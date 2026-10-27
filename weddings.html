@@ -8,7 +8,7 @@
 <meta name="description" content="Mocktail bar for Utah weddings and receptions. A signature drink named for the couple, a styled bar and bartenders, from $650. Based in Utah County.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400&family=Public+Sans:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@400;500;600&display=swap">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="stylesheet" href="styles.css">
 
@@ -21,7 +21,7 @@
       <ul>
         <li><a href="weddings.html" aria-current="page">Weddings</a></li>
         <li><a href="corporate.html">Corporate</a></li>
-        <li><a href="index.html#packages">Packages</a></li>
+        <li><a href="packages.html">Packages</a></li>
       </ul>
     </nav>
     <a class="logo" href="index.html"><img src="images/logo-180.png" alt="" width="52" height="52"><span>Utah Mocktail <i>Co.</i></span></a>
@@ -39,7 +39,7 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="weddings.html" aria-current="page">Weddings</a></li>
         <li><a href="corporate.html">Corporate</a></li>
-        <li><a href="index.html#packages">Packages</a></li>
+        <li><a href="packages.html">Packages</a></li>
         <li><a href="gallery.html">Gallery</a></li>
         <li><a href="team.html">The Team</a></li>
         <li><a href="https://www.instagram.com/utahmocktailco/">Instagram @utahmocktailco</a></li>
@@ -70,10 +70,13 @@
     <div class="wrap">
       <div class="copy">
         <h2>From a recent wedding</h2>
-        <p>A few seconds filmed behind our bar at a reception. Tap the video for sound. <span class="ph">[Couple's first names and venue, if they're OK being named.]</span></p>
+        <p>A few seconds filmed behind our bar at a reception. Tap the video to see more on Instagram. <span class="ph">[Couple's first names and venue, if they're OK being named.]</span></p>
         <a class="btn" href="#book">Plan your bar</a>
       </div>
-      <video src="wedding-clip.mp4" poster="images/wedding-poster.jpg" autoplay muted loop playsinline controls preload="metadata" aria-label="Wedding clip of mocktails being made and served"></video>
+      <a class="clip-link" href="https://www.instagram.com/utahmocktailco/" aria-label="Watch more of our events on Instagram @utahmocktailco">
+        <video src="wedding-clip.mp4" poster="images/wedding-poster.jpg" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+        <span class="clip-cta"><svg class="ig" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>Watch on Instagram</span>
+      </a>
     </div>
   </section>
 
@@ -86,36 +89,41 @@
         <div><dt>Enough bartenders for cocktail hour</dt><dd>The Signature Celebration package has two bartenders for up to 125 guests.</dd></div>
         <div><dt>A dry wedding that still feels like a party</dt><dd>A good fit for families and venues that prefer no alcohol.</dd></div>
       </dl>
-      <a class="btn btn-light" href="index.html#packages" style="justify-self:start">See packages and prices</a>
+      <a class="btn btn-light" href="packages.html" style="justify-self:start">See packages and prices</a>
     </div>
   </section>
 
-  <section class="contact band" id="book">
+  <section class="contact" id="book">
     <div class="wrap">
       <div class="copy">
-        <h2>Reserve your date</h2>
-        <p>Tell us the date, the place and about how many guests you're expecting. We'll get back to you with availability and a quote. No obligation.</p>
+        <p class="eyebrow">Reserve your date</p>
+        <h2>Let's plan <em>your event.</em></h2>
+        <p>Send a few details and our team will get back to you with availability and a quote. No obligation.</p>
+        <ul class="checks">
+          <li>Free, no-obligation quote</li>
+          <li>Based in Utah County, serving statewide</li>
+          <li>Destination events considered</li>
+        </ul>
         <dl>
+          <dt>Instagram</dt><dd><a class="ig-inline" href="https://www.instagram.com/utahmocktailco/"><svg class="ig" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>@utahmocktailco</a></dd>
           <dt>Email</dt><dd>hello@utahmocktail.co</dd>
           <dt>Phone</dt><dd><span class="ph">[phone]</span></dd>
-          <dt>Instagram</dt><dd><a class="ig-inline" href="https://www.instagram.com/utahmocktailco/"><svg class="ig" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>@utahmocktailco</a></dd>
-          <dt>Based in</dt><dd>Utah County. We travel statewide.</dd>
         </dl>
       </div>
-      <form id="inquiry" novalidate>
-        <label>Name<input id="f-name" name="name" autocomplete="name" required></label>
-        <label>Email<input id="f-email" name="email" type="email" autocomplete="email" required></label>
+      <form id="inquiry" class="form-card" novalidate>
+        <label>Name<input id="f-name" name="name" autocomplete="name" placeholder="Your name" required></label>
+        <label>Email<input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required></label>
         <label>Event date<input id="f-date" name="date" type="date"></label>
-        <label>Guest count<input id="f-guests" name="guests" type="number" min="1" inputmode="numeric"></label>
-        <label class="full">Venue or city<input id="f-venue" name="venue"></label>
-        <label class="full">Package you're interested in
-          <select id="f-pkg" name="package"><option>Not sure yet</option><option>Sweet & Simple ($650)</option><option>Signature Celebration ($995)</option><option>Luxe Dry Bar ($1,295)</option><option>Grand Event ($1,995)</option></select>
-        </label>
-        <label class="full">Type of event
+        <label>Guest count<input id="f-guests" name="guests" type="number" min="1" inputmode="numeric" placeholder="e.g. 80"></label>
+        <label class="full">Venue or city<input id="f-venue" name="venue" placeholder="e.g. Hobble Creek Manor, Springville"></label>
+        <label>Type of event
           <select id="f-type" name="type"><option selected>Wedding or reception</option><option>Corporate or conference</option><option>Shower or birthday</option><option>Graduation or reunion</option><option>School or university event</option><option>Religious or community gathering</option><option>Something else</option></select>
         </label>
-        <label class="full">Anything else?<textarea id="f-msg" name="message"></textarea></label>
-        <button class="btn" type="submit">Reserve my date</button>
+        <label>Package
+          <select id="f-pkg" name="package"><option>Not sure yet</option><option>Sweet & Simple ($650)</option><option>Signature Celebration ($995)</option><option>Luxe Dry Bar ($1,295)</option><option>Grand Event ($1,995)</option></select>
+        </label>
+        <label class="full">Anything else?<textarea id="f-msg" name="message" placeholder="Location, vibe, must-have flavors..."></textarea></label>
+        <button class="btn full" type="submit">Reserve my date</button>
         <p class="form-note full" id="form-note" role="status">Draft site: this form isn't connected yet.</p>
       </form>
     </div>
@@ -143,26 +151,13 @@ document.getElementById('inquiry').addEventListener('submit', function (e) {
   document.getElementById('form-note').textContent = 'This is a draft, so nothing was sent. The live site will send this to our team.';
 });
 
-// Three scroll effects: the header turns solid past the video, the photo strip
-// slides sideways, and photos ease in once. All are off with "reduce motion".
+// Scroll effects: the header turns solid past the video and photos ease in once.
+// Both are off with "reduce motion".
 (function () {
   var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var header = document.querySelector('header.top');
-  var track = document.querySelector('.gallery .track');
   if (still) { document.documentElement.classList.add('no-motion'); document.documentElement.classList.remove('js'); }
-  // On phones and touch screens the drink photos are swiped with a finger instead of moving with the page.
-  var swipe = window.matchMedia('(hover: none), (max-width: 640px)').matches;
-  if (swipe) document.documentElement.classList.add('swipe');
-  function onScroll() {
-    header.classList.toggle('scrolled', window.scrollY > 40);
-    if (track && !still && !swipe) {
-      var box = track.parentElement.getBoundingClientRect();
-      var vh = window.innerHeight;
-      var t = Math.min(1, Math.max(0, (vh - box.top) / (vh + box.height)));
-      var room = Math.max(0, track.scrollWidth - track.parentElement.clientWidth);
-      track.style.transform = 'translateX(' + (-t * room) + 'px)';
-    }
-  }
+  function onScroll() { header.classList.toggle('scrolled', window.scrollY > 40); }
   // Floating "Reserve your date" button: shows after the first screen, hides while the form is on screen.
   var fb = document.querySelector('.float-book');
   var form = document.getElementById('book');
@@ -172,27 +167,13 @@ document.getElementById('inquiry').addEventListener('submit', function (e) {
     new IntersectionObserver(function (en) { formOn = en[0].isIntersecting; showFloat(); }).observe(form);
   }
   window.addEventListener('scroll', showFloat, { passive: true });
-  // Phones: the drink photos drift slowly so people see they can swipe. Touching pauses it; it resumes 4s later.
-  var gal = document.querySelector('.gallery');
-  if (swipe && gal && !still) {
-    var pos = 0, paused = false, onScreen = false, timer;
-    gal.classList.add('drift');
-    function pause() { paused = true; gal.classList.remove('drift'); clearTimeout(timer); }
-    function resume() { clearTimeout(timer); timer = setTimeout(function () { pos = gal.scrollLeft; paused = false; gal.classList.add('drift'); }, 4000); }
-    gal.addEventListener('touchstart', pause, { passive: true });
-    gal.addEventListener('touchend', resume, { passive: true });
-    gal.addEventListener('pointerdown', pause);
-    gal.addEventListener('pointerup', resume);
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (en) { onScreen = en[0].isIntersecting; }).observe(gal);
-    (function tick() {
-      if (!paused && onScreen) {
-        var end = gal.scrollWidth - gal.clientWidth;
-        pos = pos >= end - 1 ? 0 : pos + 0.35;
-        gal.scrollLeft = pos;
-      }
-      requestAnimationFrame(tick);
-    })();
-  }
+  // Package cards: swipe on phones, arrow buttons on computers.
+  document.querySelectorAll('.swipe-wrap').forEach(function (w) {
+    var row = w.querySelector('.swipe-row');
+    w.querySelectorAll('[data-dir]').forEach(function (b) {
+      b.addEventListener('click', function () { row.scrollBy({ left: b.dataset.dir * row.clientWidth * 0.8, behavior: still ? 'auto' : 'smooth' }); });
+    });
+  });
   window.addEventListener('scroll', onScroll, { passive: true });
   window.addEventListener('resize', onScroll);
   onScroll();
