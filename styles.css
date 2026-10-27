@@ -440,3 +440,5 @@ nav a.book { letter-spacing: .1em; }
 .contact .copy > p.eyebrow { font: 500 .72rem/1.2 var(--body); letter-spacing: .2em; color: var(--gold); }
 .packages { background: var(--bg); }
 .inc-grid li { font-size: 1.32rem; }
+/* Hero video is Jake's SLC event clip: a wide crop for computers, the full vertical clip for phones */
+@media (orientation: portrait) { .hero { background: #20190a url("images/hero-slc-poster-m.jpg") center / cover; } }

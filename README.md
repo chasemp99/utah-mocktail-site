@@ -15,6 +15,6 @@ Live draft: https://utah-mocktail-site-lilac.vercel.app/ (GitHub chasemp99/utah-
 - Where form inquiries should go (Formspree or similar before launch)
 - A photo from a real corporate or holiday event
 - Instagram story reviews (screenshots) and a team photo; Chase is requesting both.
-- A new hero photo or video. The "SLC Mocktail event.mov" in Jake's Drive folder may be it, but it is over the 10 MB Drive download limit, so it has to come in another way.
+- Hero video is now Jake's "SLC Mocktail event.mov" (hero-slc.mp4 wide crop for computers, hero-slc-m.mp4 vertical for phones; logo end card trimmed). Old clip kept as hero-bg.mp4 in case we switch back.
 - A sharper original of the Strawberry Lime Sparkler photo (images/strawberry-sparkler.jpg is a 338x422 screenshot).
 - A horizontal video for the wedding clip spot.
