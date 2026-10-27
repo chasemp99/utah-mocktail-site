@@ -451,3 +451,4 @@ nav a.book { letter-spacing: .1em; }
 .menu { gap: 0; }
 .menu > .wrap + .names .wrap { padding-block: clamp(2rem, 5vw, 3rem); }
 .menu { padding-top: clamp(3.5rem, 8vw, 6rem); }
+.photo-wall video { width: 100%; display: block; }
