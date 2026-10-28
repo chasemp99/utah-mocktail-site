@@ -473,3 +473,7 @@ nav a.book { letter-spacing: .1em; }
 .review figcaption strong { color: var(--fg); font-weight: 500; }
 .review .src { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
 .reviews .link-row { margin-top: 2rem; }
+
+/* Simple page tops on Weddings, Corporate and The Team (Chase 2026-10-28) */
+.page-top .page-title em { color: var(--gold); }
+.page-top + .statement { border-top: 1px solid var(--line); }
