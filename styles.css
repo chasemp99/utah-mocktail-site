@@ -68,7 +68,9 @@ nav a.book { color: var(--on-btn); background: var(--btn); padding: .85em 1.4em;
 nav a.book:hover { background: var(--btn-hover); text-decoration: none; }
 /* Phones: no tab row, one Menu button that opens a plain list */
 .menu-toggle { display: none; }
-@media (max-width: 860px) {
+/* Narrow computer screens: tighter tab row so Reviews fits */
+@media (max-width: 1280px) { header.top .wrap { gap: 1.3rem; } nav ul { gap: 1.1rem; } nav a { letter-spacing: .12em; } nav a.book { padding: .85em 1.1em; } }
+@media (max-width: 1060px) {
   header.top .wrap { display: flex; justify-content: space-between; padding-block: .9rem; }
   .logo { font-size: 1.4rem; }
   nav.main { display: none; }
@@ -452,3 +454,24 @@ nav a.book { letter-spacing: .1em; }
 .menu > .wrap + .names .wrap { padding-block: clamp(2rem, 5vw, 3rem); }
 .menu { padding-top: clamp(3.5rem, 8vw, 6rem); }
 .photo-wall video { width: 100%; display: block; }
+
+/* Gallery intro in a light picture frame (Chase 2026-10-28) */
+.frame { position: relative; display: grid; gap: 1.2rem; justify-items: center; padding: clamp(2.4rem, 6vw, 3.6rem) clamp(1.4rem, 6vw, 3.6rem); background: var(--card); border: 1px solid var(--trim); outline: 1px solid var(--trim); outline-offset: 7px; box-shadow: 0 0 0 14px var(--bg-2), 0 0 0 15px var(--trim), 0 26px 50px -30px rgb(42 36 24 / .4); margin: 22px; }
+.frame .corner { position: absolute; width: 26px; height: 26px; border: 1.5px solid var(--gold); }
+.frame .corner::after { content: ""; position: absolute; width: 6px; height: 6px; background: var(--trim); transform: rotate(45deg); }
+.frame .tl { top: 12px; left: 12px; border-right: 0; border-bottom: 0; } .frame .tl::after { top: 4px; left: 4px; }
+.frame .tr { top: 12px; right: 12px; border-left: 0; border-bottom: 0; } .frame .tr::after { top: 4px; right: 4px; }
+.frame .bl { bottom: 12px; left: 12px; border-right: 0; border-top: 0; } .frame .bl::after { bottom: 4px; left: 4px; }
+.frame .br { bottom: 12px; right: 12px; border-left: 0; border-top: 0; } .frame .br::after { bottom: 4px; right: 4px; }
+.ig-handle { display: inline-flex; align-items: center; gap: .45rem; }
+.ig-handle .ig { width: 20px; height: 20px; }
+
+/* Reviews page */
+.reviews { padding-bottom: clamp(3rem, 7vw, 5rem); }
+.reviews .wrap { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem; }
+.review { margin: 0; background: var(--card); border: 1px solid var(--line); border-radius: 4px; padding: 2rem 1.6rem; display: grid; gap: 1.2rem; align-content: space-between; }
+.review blockquote { margin: 0; font-family: var(--display); font-size: var(--step-1); line-height: 1.4; }
+.review figcaption { display: grid; gap: .2rem; font-size: .92rem; color: var(--fg-soft); }
+.review figcaption strong { color: var(--fg); font-weight: 500; }
+.review .src { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); }
+.reviews .link-row { margin-top: 2rem; }
