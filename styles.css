@@ -505,3 +505,5 @@ nav a.book { letter-spacing: .1em; }
 .page-top + .statement .wrap { padding-block: clamp(2.6rem, 5vw, 3.6rem) clamp(1rem, 2vw, 1.5rem); }
 .page-top + .statement + .pillars .wrap { padding-top: clamp(1.5rem, 3vw, 2.5rem); }
 .page-top + .pillars .wrap { padding-block: clamp(2.6rem, 5vw, 3.8rem); }
+.page-top + .packages .wrap { padding-top: clamp(2.6rem, 5vw, 3.6rem); }
+.page-top + .reviews .wrap { padding-top: clamp(2.6rem, 5vw, 3.6rem); }
