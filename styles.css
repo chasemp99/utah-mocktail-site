@@ -476,7 +476,8 @@ nav a.book { letter-spacing: .1em; }
 
 /* Simple page tops on Weddings, Corporate and The Team (Chase 2026-10-28) */
 .page-top .page-title em { color: var(--gold); }
-.page-top + .statement { border-top: 1px solid var(--line); }
+.page-top + .statement, .page-top + .pillars { border-top: 1px solid var(--line); }
+.toast-pillar h2 { font-size: var(--step-3); }
 
 /* Package cards: even spacing inside every card, all four in one row on wide screens (Chase 2026-10-28) */
 .card ul { align-content: start; }
