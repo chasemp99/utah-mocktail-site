@@ -476,7 +476,6 @@ nav a.book { letter-spacing: .1em; }
 
 /* Simple page tops on Weddings, Corporate and The Team (Chase 2026-10-28) */
 .page-top .page-title em { color: var(--gold); }
-.page-top + .statement, .page-top + .pillars { border-top: 1px solid var(--line); }
 .toast-pillar h2 { font-size: var(--step-3); }
 
 /* Package cards: even spacing inside every card, all four in one row on wide screens (Chase 2026-10-28) */
@@ -489,3 +488,20 @@ nav a.book { letter-spacing: .1em; }
 }
 .pkg-ask { display: grid; justify-items: center; gap: 1rem; text-align: center; margin-top: 1.4rem; padding-top: 2.2rem; border-top: 1px solid var(--line); }
 .pkg-ask p { font-family: var(--display); font-size: var(--step-2); line-height: 1.25; }
+
+/* Page tops (Weddings, Corporate, The Team): dark band with gold frame lines, option A (Chase 2026-10-28) */
+.page-top { background: var(--fg); color: #f3ecda; position: relative; }
+.page-top::before { content: ""; position: absolute; inset: 14px; border: 1px solid rgb(230 207 156 / .55); outline: 1px solid rgb(230 207 156 / .3); outline-offset: 5px; pointer-events: none; }
+.page-top .wrap { padding-block: clamp(3rem, 6vw, 4.2rem); }
+.page-top .page-title { color: #f3ecda; }
+.page-top .page-title em { color: #e6cf9c; }
+.page-top .page-title::after { background-color: #e6cf9c; }
+@media (max-width: 640px) { .page-top .page-title::after { background-color: transparent; filter: brightness(1.45); } }
+.page-top p { color: #cfc3a8; }
+.page-top .btn { background: #f3ecda; color: #2a2418; border-color: #f3ecda; }
+.page-top .btn:hover { background: #e6cf9c; border-color: #e6cf9c; }
+@media (max-width: 640px) { .page-top::before { inset: 8px; outline-offset: 3px; } }
+/* Tighter gaps under the dark band */
+.page-top + .statement .wrap { padding-block: clamp(2.6rem, 5vw, 3.6rem) clamp(1rem, 2vw, 1.5rem); }
+.page-top + .statement + .pillars .wrap { padding-top: clamp(1.5rem, 3vw, 2.5rem); }
+.page-top + .pillars .wrap { padding-block: clamp(2.6rem, 5vw, 3.8rem); }
