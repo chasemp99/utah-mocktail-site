@@ -68,9 +68,7 @@ nav a.book { color: var(--on-btn); background: var(--btn); padding: .85em 1.4em;
 nav a.book:hover { background: var(--btn-hover); text-decoration: none; }
 /* Phones: no tab row, one Menu button that opens a plain list */
 .menu-toggle { display: none; }
-/* Narrow computer screens: tighter tab row so Reviews fits */
-@media (max-width: 1280px) { header.top .wrap { gap: 1.3rem; } nav ul { gap: 1.1rem; } nav a { letter-spacing: .12em; } nav a.book { padding: .85em 1.1em; } }
-@media (max-width: 1060px) {
+@media (max-width: 1140px) {
   header.top .wrap { display: flex; justify-content: space-between; padding-block: .9rem; }
   .logo { font-size: 1.4rem; }
   nav.main { display: none; }
