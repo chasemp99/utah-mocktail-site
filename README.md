@@ -9,7 +9,7 @@ Live draft: https://utah-mocktail-site-lilac.vercel.app/ (GitHub chasemp99/utah-
 - Final domain (Instagram is @utahmocktailco). Phone (928) 266-8863 and utahmocktailco@gmail.com are in.
 - Jacob's photo is in (images/jacob.jpg, from Chase 2026-10-16). Still need other bartenders' names and photos; bio details (where he bartended, a favorite French classic)
 - Confirm "Cherry Parson" spelling (the four drink cards use the old site's names and photos)
-- Couple/venue name for the wedding video (with permission)
+- Couple's first names for the wedding video, if they're OK being named (venue is Hobble Creek Manor)
 - Winter drink names; whether he provides invoices, W-9, insurance certificate
 - Real reviews only, word for word (Instagram quotes now, Google reviews once the profile has them). Add them to the REVIEWS list in build-pages.py; until then reviews.html shows dashed placeholder cards. The earlier site's five reviews look invented, so don't reuse them.
 - Where form inquiries should go (Formspree or similar before launch)

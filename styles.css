@@ -505,3 +505,6 @@ nav a.book { letter-spacing: .1em; }
 .page-top + .packages .wrap { padding-top: clamp(2.6rem, 5vw, 3.6rem); }
 .page-top + .reviews .wrap { padding-top: clamp(2.6rem, 5vw, 3.6rem); }
 @media (min-width: 641px) { .statement h2::after, .sec-head.center h2::after, .page-title::after { width: 200px; height: 25px; margin-top: 1.2rem; } }
+/* Second venues line: events served (Jake 2026-10-29) */
+.venues-label-2 { margin-top: 1rem; }
+.venues-more { font-size: var(--step-1); color: var(--fg-soft); }
