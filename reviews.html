@@ -100,7 +100,7 @@
         <label class="full">Anything else?<textarea id="f-msg" name="message" placeholder="Location, vibe, must-have flavors..."></textarea></label>
         <label class="hp" aria-hidden="true">Company<input name="company" tabindex="-1" autocomplete="off"></label>
         <button class="btn full" type="submit">Reserve my date</button>
-        <p class="form-note full" id="form-note" role="status">Draft site: this form isn’t connected yet.</p>
+        <p class="form-note full" id="form-note" role="status"></p>
       </form>
     </div>
   </section>
@@ -126,7 +126,7 @@
 document.getElementById('inquiry').addEventListener('submit', function (e) {
   e.preventDefault();
   var f = this, note = document.getElementById('form-note'), btn = f.querySelector('button[type=submit]');
-  var url = '';
+  var url = 'https://script.google.com/macros/s/AKfycbwHHXpcNrJrIC-XcgOLXBQ7OhWbu58uSoJqrqlbmUCXUFE70B-InwVYyIa-P2md5CR05A/exec';
   if (!f.elements['name'].value.trim() || !/^\S+@\S+\.\S+$/.test(f.elements['email'].value.trim())) {
     note.textContent = 'Please add your name and a valid email so we can reach you.';
     return;
