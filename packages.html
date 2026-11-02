@@ -197,6 +197,12 @@
 
 <a class="float-book" href="#book">Reserve your date</a>
 
+<dialog id="thanks" class="thanks" aria-labelledby="thanks-title">
+  <h2 id="thanks-title">Thanks!</h2>
+  <p>We’ve received your request. A member of our team will reach out soon.</p>
+  <form method="dialog"><button class="btn">Close</button></form>
+</dialog>
+
 <script>
 // Date form: sends to the Google Sheet web app (FORM_URL), which also emails our team.
 document.getElementById('inquiry').addEventListener('submit', function (e) {
@@ -207,13 +213,12 @@ document.getElementById('inquiry').addEventListener('submit', function (e) {
     note.textContent = 'Please add your name and a valid email so we can reach you.';
     return;
   }
-  if (!url) { note.textContent = 'This is a draft, so nothing was sent. The live site will send this to our team.'; return; }
   var data = new URLSearchParams(new FormData(f));
   data.append('page', location.pathname);
   btn.disabled = true;
   note.textContent = 'Sending...';
   fetch(url, { method: 'POST', mode: 'no-cors', body: data })
-    .then(function () { f.reset(); note.textContent = 'Thanks! We got your request, and our team will be in touch soon.'; })
+    .then(function () { f.reset(); note.textContent = ''; var d = document.getElementById('thanks'); if (d.showModal) d.showModal(); else note.textContent = d.querySelector('p').textContent; })
     .catch(function () { note.textContent = 'That didn’t go through. Please email utahmocktailco@gmail.com or call (928) 266-8863.'; })
     .then(function () { btn.disabled = false; });
 });
