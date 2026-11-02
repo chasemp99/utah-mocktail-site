@@ -98,6 +98,7 @@
           <select id="f-pkg" name="package"><option>Not sure yet</option><option>Sweet & Simple ($650)</option><option>Signature Celebration ($995)</option><option>Luxe Dry Bar ($1,295)</option><option>Grand Event ($1,995)</option></select>
         </label>
         <label class="full">Anything else?<textarea id="f-msg" name="message" placeholder="Location, vibe, must-have flavors..."></textarea></label>
+        <label class="hp" aria-hidden="true">Company<input name="company" tabindex="-1" autocomplete="off"></label>
         <button class="btn full" type="submit">Reserve my date</button>
         <p class="form-note full" id="form-note" role="status">Draft site: this form isn’t connected yet.</p>
       </form>
@@ -121,9 +122,24 @@
 <a class="float-book" href="#book">Reserve your date</a>
 
 <script>
+// Date form: sends to the Google Sheet web app (FORM_URL), which also emails our team.
 document.getElementById('inquiry').addEventListener('submit', function (e) {
   e.preventDefault();
-  document.getElementById('form-note').textContent = 'This is a draft, so nothing was sent. The live site will send this to our team.';
+  var f = this, note = document.getElementById('form-note'), btn = f.querySelector('button[type=submit]');
+  var url = '';
+  if (!f.elements['name'].value.trim() || !/^\S+@\S+\.\S+$/.test(f.elements['email'].value.trim())) {
+    note.textContent = 'Please add your name and a valid email so we can reach you.';
+    return;
+  }
+  if (!url) { note.textContent = 'This is a draft, so nothing was sent. The live site will send this to our team.'; return; }
+  var data = new URLSearchParams(new FormData(f));
+  data.append('page', location.pathname);
+  btn.disabled = true;
+  note.textContent = 'Sending...';
+  fetch(url, { method: 'POST', mode: 'no-cors', body: data })
+    .then(function () { f.reset(); note.textContent = 'Thanks! We got your request, and our team will be in touch soon.'; })
+    .catch(function () { note.textContent = 'That didn’t go through. Please email utahmocktailco@gmail.com or call (928) 266-8863.'; })
+    .then(function () { btn.disabled = false; });
 });
 
 // Scroll effects: the header turns solid past the video and photos ease in once.

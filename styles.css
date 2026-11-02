@@ -508,3 +508,5 @@ nav a.book { letter-spacing: .1em; }
 /* Second venues line: events served (Jake 2026-10-29) */
 .venues-label-2 { margin-top: 1rem; }
 .venues-more { font-size: var(--step-1); color: var(--fg-soft); }
+/* Hidden spam trap on the date form: people never see it, bots fill it in */
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
