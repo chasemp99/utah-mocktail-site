@@ -7,7 +7,7 @@ Live draft: https://utah-mocktail-site-lilac.vercel.app/ (GitHub chasemp99/utah-
 ## Still needed from Jacob (dashed placeholders on the page)
 - Business name to confirm: "Utah Mocktail Co." (used) vs "UtahMocktail and Co."
 - Final domain (Instagram is @utahmocktailco). Phone (928) 266-8863 and utahmocktailco@gmail.com are in.
-- Jacob's photo is in (images/jacob.jpg, from Chase 2026-10-16). Still need other bartenders' names and photos; bio details (where he bartended, a favorite French classic)
+- Jacob's photo is in (images/jacob.jpg, from Chase 2026-10-16). Other bartenders go in TEAM_MEMBERS in build-pages.py once Jake's team settles (only Jake shows for now). Still need bio details (where he bartended, a favorite French classic)
 - Confirm "Cherry Parson" spelling (the four drink cards use the old site's names and photos)
 - Couple's first names for the wedding video, if they're OK being named (venue is Hobble Creek Manor)
 - Winter drink names; whether he provides invoices, W-9, insurance certificate
