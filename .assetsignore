@@ -4,3 +4,9 @@ design.md
 .gitignore
 .assetsignore
 wrangler.jsonc
+build-pages.py
+AGENTS.md
+CLAUDE.md
+.github
+scripts
+__pycache__
