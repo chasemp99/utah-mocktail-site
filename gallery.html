@@ -2,6 +2,9 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
+<!-- Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-688F3T92W2"></script>
+<script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-688F3T92W2');</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Gallery | Utah Mocktail Co.</title>
 <meta name="claude:viewport-fit-sides" content="cover">
@@ -156,7 +159,7 @@ document.getElementById('inquiry').addEventListener('submit', function (e) {
   btn.disabled = true;
   note.textContent = 'Sending...';
   fetch(url, { method: 'POST', mode: 'no-cors', body: data })
-    .then(function () { f.reset(); note.textContent = ''; var d = document.getElementById('thanks'); if (d.showModal) d.showModal(); else note.textContent = d.querySelector('p').textContent; })
+    .then(function () { f.reset(); note.textContent = ''; if (window.gtag) gtag('event', 'generate_lead', { form: 'date_request' }); var d = document.getElementById('thanks'); if (d.showModal) d.showModal(); else note.textContent = d.querySelector('p').textContent; })
     .catch(function () { note.textContent = 'That didn’t go through. Please email utahmocktailco@gmail.com or call (928) 266-8863.'; })
     .then(function () { btn.disabled = false; });
 });
