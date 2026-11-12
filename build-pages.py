@@ -5,7 +5,7 @@ This rewrites the 7 .html pages in this folder. Commit the script AND the pages 
 Never edit the .html files by hand: the next build overwrites them. Rules for editors: AGENTS.md.
 Output is plain HTML, so Cloudflare needs no build step. Design rules live in design.md.
 """
-import sys, os
+import sys, os, re
 
 OUT = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.abspath(__file__))
 BIZ = "Utah Mocktail Co."
@@ -788,5 +788,8 @@ packages_page = head(f"Packages and Pricing | {BIZ}", f"Mocktail bar packages fr
 for name, html in [("index.html", home), ("packages.html", packages_page), ("weddings.html", weddings), ("corporate.html", corporate), ("team.html", team), ("gallery.html", gallery), ("reviews.html", reviews_page)]:
     url = "https://utahmocktailco.com/" + ("" if name == "index.html" else name[:-5])
     html = html.replace('<link rel="icon"', f'<link rel="canonical" href="{url}">\n<link rel="icon"', 1)
+    # Link to clean URLs (/weddings, not weddings.html) so Google doesn't see two addresses per page.
+    html = re.sub(r'href="(index|weddings|corporate|packages|gallery|reviews|team)\.html(#[^"]*)?"',
+                  lambda m: f'href="/{"" if m.group(1) == "index" else m.group(1)}{m.group(2) or ""}"', html)
     open(os.path.join(OUT, name), "w").write(html)
     print(name, len(html))
