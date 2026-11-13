@@ -140,9 +140,10 @@ def contact(default_type="Wedding or reception"):
       <form id="inquiry" class="form-card" novalidate>
         <label>Name<input id="f-name" name="name" autocomplete="name" placeholder="Your name" required></label>
         <label>Email<input id="f-email" name="email" type="email" autocomplete="email" placeholder="you@email.com" required></label>
+        <label>Phone (optional)<input id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(801) 555-0123"></label>
         <label>Event date<input id="f-date" name="date" type="date"></label>
         <label>Guest count<input id="f-guests" name="guests" type="number" min="1" inputmode="numeric" placeholder="e.g. 80"></label>
-        <label class="full">Venue or city<input id="f-venue" name="venue" placeholder="e.g. Hobble Creek Manor, Springville"></label>
+        <label>Venue or city<input id="f-venue" name="venue" placeholder="e.g. Hobble Creek Manor"></label>
         <label>Type of event
           <select id="f-type" name="type">{o}</select>
         </label>
