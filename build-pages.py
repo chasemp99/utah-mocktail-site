@@ -41,7 +41,7 @@ SCHEMA = f"""<script type="application/ld+json">
   "image": "https://utahmocktailco.com/images/capitol-bar.jpg",
   "email": "{EMAIL}",
   "telephone": "+1-928-266-8863",
-  "priceRange": "$650-$1,995+",
+  "priceRange": "$750-$1,995+",
   "founder": {{"@type": "Person", "name": "{FOUNDER}"}},
   "address": {{"@type": "PostalAddress", "addressRegion": "UT", "addressCountry": "US"}},
   "areaServed": ["Utah County", "Salt Lake County", "Davis County", "Weber County", "Summit County", "Wasatch County", "Southern Utah"],
@@ -56,6 +56,12 @@ def head(title, desc, schema=False, over_hero=False):
     return f"""<!doctype html>
 <html lang="en">
 <head>
+<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-T4KL3BN3"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+</script>
 <meta charset="utf-8">
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
@@ -265,7 +271,7 @@ SIGNATURES = [
 
 # name, for, price, guests, hours, drinks, staff, extra, popular
 PACKAGES = [
-    ("Sweet & Simple", "Intimate gatherings", "$650", "Up to 75", "2 hours", "2 signature drinks", "1 bartender", "Styled bar setup", False),
+    ("Sweet & Simple", "Intimate gatherings", "$750", "Up to 75", "2 hours", "2 signature drinks", "1 bartender", "Styled bar setup", False),
     ("Signature Celebration", "Weddings and special events", "$995", "Up to 125", "3 hours", "3 signature drinks", "2 bartenders", "Extra garnish and a custom menu sign", True),
     ("Luxe Dry Bar", "Bigger celebrations", "$1,295", "Up to 200", "4 hours", "4 custom drinks", "2 to 3 bartenders", "Menu planning call before the event", False),
     ("Grand Event", "Large events", "$1,995", "Up to 400", "4 hours", "2 fast-pour signature drinks", "3 or more bartenders", "Full bar setup built for quick lines", False),
@@ -457,7 +463,7 @@ def bio_teaser():
 
 
 # ---------------- Home ----------------
-home = head(f"{BIZ} | Mocktail Bar for Utah Weddings and Events", f"{BIZ} is a mobile mocktail bar based in Utah County. Bartenders, a styled bar and ten signature mocktails for weddings and corporate events across Utah. Packages from $650.", schema=True, over_hero=True) + header("index.html") + f"""
+home = head(f"{BIZ} | Mocktail Bar for Utah Weddings and Events", f"{BIZ} is a mobile mocktail bar based in Utah County. Bartenders, a styled bar and ten signature mocktails for weddings and corporate events across Utah. Packages from $750.", schema=True, over_hero=True) + header("index.html") + f"""
 <main id="top">
   <section class="hero">
     <video class="bg" autoplay muted loop playsinline aria-hidden="true"></video>
@@ -530,7 +536,7 @@ home = head(f"{BIZ} | Mocktail Bar for Utah Weddings and Events", f"{BIZ} is a m
   <section class="pkg-teaser" id="packages">
     <div class="wrap narrow center">
       <h2>Packages</h2>
-      <p>Four packages for 30 to 400 guests, starting at $650. Every one includes the bar, bartenders, real glassware and cleanup.</p>
+      <p>Four packages for 30 to 400 guests, starting at $750. Every one includes the bar, bartenders, real glassware and cleanup.</p>
       <a class="btn" href="packages.html">See packages and pricing</a>
     </div>
   </section>
@@ -541,7 +547,7 @@ home = head(f"{BIZ} | Mocktail Bar for Utah Weddings and Events", f"{BIZ} is a m
 {FOOT}"""
 
 # ---------------- Weddings ----------------
-weddings = head(f"Wedding Mocktail Bar in Utah | {BIZ}", "Mocktail bar for Utah weddings and receptions. A signature drink named for the couple, a styled bar and bartenders, from $650. Based in Utah County.") + header("weddings.html") + f"""
+weddings = head(f"Wedding Mocktail Bar in Utah | {BIZ}", "Mocktail bar for Utah weddings and receptions. A signature drink named for the couple, a styled bar and bartenders, from $750. Based in Utah County.") + header("weddings.html") + f"""
 <main id="top">
   <section class="statement page-top">
     <div class="wrap narrow center">
@@ -771,7 +777,7 @@ reviews_page = head(f"Reviews | {BIZ}", f"What couples, families and companies s
 {FOOT}"""
 
 # ---------------- Packages ----------------
-packages_page = head(f"Packages and Pricing | {BIZ}", f"Mocktail bar packages from {BIZ}: four options for 30 to 400 guests, from $650, with bartenders, real glassware, setup and cleanup included.") + header("packages.html") + f"""
+packages_page = head(f"Packages and Pricing | {BIZ}", f"Mocktail bar packages from {BIZ}: four options for 30 to 400 guests, from $750, with bartenders, real glassware, setup and cleanup included.") + header("packages.html") + f"""
 <main id="top">
   <section class="statement page-top">
     <div class="wrap narrow center">
