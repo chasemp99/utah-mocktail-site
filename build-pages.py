@@ -59,7 +59,7 @@ def head(title, desc, schema=False, over_hero=False):
 <script async src="https://www.googletagmanager.com/gtm.js?id=GTM-T4KL3BN3"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
+function gtag(){{dataLayer.push(arguments);}}
   gtag('js', new Date());
 </script>
 <meta charset="utf-8">
