@@ -16,6 +16,7 @@ TEL = "+19282668863"
 # Google Apps Script web app that saves each "Reserve your date" request to a Google Sheet and emails the team.
 # Lives in Chase's Google account. Don't change this URL.
 GA_ID = "G-688F3T92W2"  # Google Analytics 4, property "utahmocktailco.com"
+GTM_ID = "GTM-T4KL3BN3"  # Google Tag Manager container (added by Jake). Don't add a GA4 tag inside GTM: GA_ID already counts visits.
 FORM_URL = "https://script.google.com/macros/s/AKfycbwHHXpcNrJrIC-XcgOLXBQ7OhWbu58uSoJqrqlbmUCXUFE70B-InwVYyIa-P2md5CR05A/exec"
 IG_HANDLE = "utahmocktailco"
 IG_URL = f"https://www.instagram.com/{IG_HANDLE}/"
@@ -56,13 +57,14 @@ def head(title, desc, schema=False, over_hero=False):
     return f"""<!doctype html>
 <html lang="en">
 <head>
-<script async src="https://www.googletagmanager.com/gtm.js?id=GTM-T4KL3BN3"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-function gtag(){{dataLayer.push(arguments);}}
-  gtag('js', new Date());
-</script>
 <meta charset="utf-8">
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){{w[l]=w[l]||[];w[l].push({{'gtm.start':
+new Date().getTime(),event:'gtm.js'}});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+}})(window,document,'script','dataLayer','{GTM_ID}');</script>
+<!-- End Google Tag Manager -->
 <!-- Google Analytics -->
 <script async src="https://www.googletagmanager.com/gtag/js?id={GA_ID}"></script>
 <script>window.dataLayer = window.dataLayer || []; function gtag(){{dataLayer.push(arguments);}} gtag('js', new Date()); gtag('config', '{GA_ID}');</script>
@@ -79,6 +81,7 @@ function gtag(){{dataLayer.push(arguments);}}
 <script>document.documentElement.classList.add('js');</script>
 </head>
 <body{' class="over-hero"' if over_hero else ''}>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id={GTM_ID}" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 """
 
 
